@@ -1,0 +1,25 @@
+.footer {
+  margin: 0;
+  padding: 0 16rem;
+  grid-column: gutter-start / gutter-end;
+  background-color: $color-blue-dark;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $color-white;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
+  .nav {
+    grid-column: 2;
+    @include respond(tab-port) {
+      margin: 3rem 0;
+    }
+    a {
+      color: $color-white;
+    }
+  }
+}

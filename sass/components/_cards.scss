@@ -1,0 +1,40 @@
+.card {
+  background: $color-white;
+  box-shadow: 0rem 0.5rem 1rem rgba($color-blue-soft, 0.2);
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  padding: 5rem 1rem 2rem;
+  border-radius: 3rem;
+  @include respond(tab-port) {
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+  &--2 {
+    transform: translateY(3rem);
+    @include respond(tab-port) {
+      transform: translateY(0);
+    }
+  }
+  &--3 {
+    transform: translateY(5rem);
+    @include respond(tab-port) {
+      transform: translateY(0);
+    }
+  }
+  &__img {
+    height: 7rem;
+    margin-bottom: 2rem;
+    &--dots {
+      margin-bottom: 2rem;
+      max-width: 100%;
+    }
+  }
+  .heading-4 {
+    margin-bottom: 1rem;
+  }
+  .paragraph {
+    margin-bottom: 2rem;
+  }
+}

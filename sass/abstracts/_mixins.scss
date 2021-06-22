@@ -1,0 +1,60 @@
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexList($gutter) {
+  display: flex;
+  & > li:not(:last-child) {
+    margin-right: #{$gutter};
+  }
+}
+
+@mixin borderNHover($color, $effectColor, $extraColor: null) {
+  background-color: $effectColor;
+  border: 2px solid $effectColor;
+  color: $color;
+  &:hover {
+    border: 2px solid $effectColor;
+    color: $effectColor;
+    @if $extraColor != null {
+      border: 2px solid $extraColor;
+      color: $extraColor;
+    }
+  }
+}
+
+@mixin marginX($dir, $val) {
+  margin-#{$dir}: $val;
+}
+
+@mixin gridFlexWrapper($size) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
+}
+
+@mixin respond($bp) {
+  @if $bp == phone {
+    // 600px/16px = 37.5
+    @media screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $bp == tab-land {
+    // 1200px/16px = 75
+    @media screen and (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $bp == tab-port {
+    @media screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+  // @if $bp == phone {
+  //   @media screen and (max-width: 37.5em) {
+  //     @content;
+  //   }
+  // }
+}

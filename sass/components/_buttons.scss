@@ -1,0 +1,30 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 0.8rem 3rem;
+    box-shadow: 0rem 0.5rem 1rem rgba($color-blue-soft, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &:hover {
+    background-color: $color-white;
+  }
+  &--primary {
+    font-size: 1.2rem;
+    @include borderNHover($color-white, $color-blue-soft);
+  }
+  &--default {
+    font-size: 1.2rem;
+    //prettier-ignore
+    @include borderNHover($color-blue-dark, $color-gray-light-2, $color-gray-light);
+  }
+  &--danger {
+    font-size: 1.4rem;
+    @include borderNHover($color-white, $color-red-soft);
+  }
+}

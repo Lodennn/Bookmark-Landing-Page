@@ -1,0 +1,12 @@
+.illustration {
+  margin-top: 10rem;
+  z-index: -1;
+  &--right {
+    grid-column: 6 / -1;
+    grid-row: 2 / 3;
+  }
+  &--left {
+    grid-column: 1 / 6;
+    grid-row: 4 / 5;
+  }
+}

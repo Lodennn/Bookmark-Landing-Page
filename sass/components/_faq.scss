@@ -1,0 +1,41 @@
+.faq {
+  text-align: center;
+  &__list {
+    text-align: left;
+    max-width: 70rem;
+    margin: 3rem auto;
+  }
+
+  &__item {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover {
+      color: $color-red-soft;
+    }
+    &:first-child {
+      border-top: 1px solid #ddd;
+    }
+  }
+
+  &__arrow {
+    color: $color-blue-soft;
+    // justify-self: center;
+    // align-self: center;
+  }
+
+  &__question {
+    // grid-row: 1;
+  }
+
+  &__answer {
+    transition: all 0.6s ease;
+    padding: 1rem;
+    font-size: 1.6rem;
+    margin: 1rem 0;
+  }
+}

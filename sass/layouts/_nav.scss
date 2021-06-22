@@ -1,0 +1,24 @@
+.nav {
+  grid-column: content-start / content-end;
+  grid-row: nav-start / nav-end;
+
+  display: grid;
+  grid-template-columns: 1fr min-content minmax(max-content, 10rem);
+  align-items: center;
+  @include respond(tab-port) {
+    grid-template-columns: min-content max-content;
+    justify-content: center;
+  }
+
+  &__list {
+    margin-right: 3rem;
+  }
+  &__item {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  &__link {
+    color: $color-gray-dark;
+    text-decoration: none;
+  }
+}

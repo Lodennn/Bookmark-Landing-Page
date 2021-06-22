@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: $font-size-default;
+  @include respond(tab-land) {
+    font-size: 56.25%; //9px/16px
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //8px/16px
+  }
+  @include respond(phone) {
+    font-size: 37.5%; //8px/16px
+  }
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 1.8rem;
+  font-weight: $font-rg;
+  line-height: 1.5;
+}
+
+.container {
+  display: grid;
+  grid-template-columns:
+    [gutter-start] minmax(6rem, 1fr) [content-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [content-end]
+    minmax(6rem, 1fr) [gutter-end];
+  grid-template-rows:
+    [nav-start] 10rem [nav-end] repeat(5, min-content)
+    [sub-footer-start] max-content [sub-footer-end];
+  justify-content: center;
+}
+
+.section-wrapper {
+  grid-row: 3 / 4;
+  grid-column: content-start / content-end;
+  text-align: center;
+}
